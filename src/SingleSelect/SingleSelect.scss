@@ -1,0 +1,115 @@
+//scss stub for singleselect
+$textFont: calibri;
+$backgroundColor: rgb(63, 223, 31);
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.SingleSelect{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("math-image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+    .card-container {
+        width: 400px;
+        // height: 450px;
+        animation-name: line-1;
+        animation-duration: 1.2s;
+        position: relative;
+        animation-fill-mode: forwards;
+    }
+    .feedback-container {
+        width: 400px;
+        // height: 450px;
+        // animation-name: line-1;
+        // animation-duration: 1.2s;
+        // position: relative;
+        // animation-fill-mode: forwards;
+    }
+    @keyframes line-1 {
+        0% { opacity: 0 }
+        100% { opacity: 1 }
+    }
+    .header-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-color: $backgroundColor;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    h1 {
+        color: white;
+        font-family: $textFont;
+    }
+    .options {
+        padding-left: 15%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .feedback {
+        // padding-left: 15%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        p {
+            font-family: $textFont;
+            font-weight: 600;
+
+        }
+    }
+    .feedback-text {
+        color: black;
+    }
+    button {
+        margin: 1rem;
+        padding: 1rem;
+        font-family: $textFont;
+        outline: none;
+        border-radius: 50%;
+        border: none;
+    }
+    .option-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        padding: 1.2rem;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-weight: 600;
+        font-size: 1.5rem;
+        &:hover {
+            background-color: $backgroundColor;
+            transition: .7s;
+            cursor: pointer;
+            font-weight: 800;
+        }
+    }
+    .feedback-button {
+        background-color: $backgroundColor;
+        font-size: 1.5rem;
+        font-weight: 800;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
