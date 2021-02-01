@@ -21,7 +21,6 @@ const SingleSelect = props => {
     }
 
     const selectedOption = props.data.options[selected]
-
     return (
         <div className={`SingleSelect`}>
             <div className={`card-container`}>
