@@ -19,7 +19,8 @@ import './MultiSelect.scss'
 const MultiSelect = props => {
 
     const [choice, setChoice] = useState(-1);
-    console.log(choice)
+    const [submit, setSubmit] = useState(false);
+   
 
     function handleClick(i) {
         const optionButtons = document.querySelectorAll(".option-button");
@@ -32,15 +33,22 @@ const MultiSelect = props => {
     }
 
     function submitAnswer() {
-        let answerResult = document.querySelectorAll(".answer-result");
+        setSubmit(true)
         let submitButtonSection = document.querySelector(".submit-button-section");
+        let answerResult = document.querySelectorAll(".answer-result");
         for (let i = 0; i < answerResult.length; i++) {
             answerResult[i].style.display = "block";
         }
         setTimeout(function() {
-            setChoice(0);
             submitButtonSection.style.display = "none";
-        }, 10000)
+            setChoice(0);
+        }, 5000)
+    }
+
+    function next() {
+        setChoice(0)
+        let submitButtonSection = document.querySelector(".submit-button-section");
+        submitButtonSection.style.display = "none";
     }
 
     const selectedOptionButtons = document.querySelectorAll(".option-button");
@@ -87,7 +95,7 @@ const MultiSelect = props => {
                   
                 }
                 <div className={`submit-button-section`}>
-                    <button onClick={submitAnswer} className={`submit-button`}>Submit</button>
+                    {submit === false ? <button onClick={submitAnswer} className={`submit-button`}>Submit</button> : <button onClick={next} className={`submit-button`}>Next</button> }
                 </div>
                 </div>
             </div>
